@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:15-alpine
-    container_name: postgres-fermin
+    container_name: postgres-fermin-db
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
