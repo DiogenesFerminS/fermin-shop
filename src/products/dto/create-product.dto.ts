@@ -45,5 +45,10 @@ export class CreateProductDto {
   @IsString({ each: true })
   @MinLength(3, { each: true })
   @IsOptional()
-  tags: string[];
+  tags?: string[];
+
+  @IsArray()
+  @IsString({ each: true })
+  @IsOptional()
+  images?: string[];
 }
