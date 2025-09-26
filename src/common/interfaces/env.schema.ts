@@ -8,4 +8,5 @@ export const EnvSchema = Joi.object({
   POSTGRES_PORT: Joi.number().default(5432),
   PORT: Joi.number(),
   HOST_API: Joi.string(),
+  JWT_SECRET: Joi.string(),
 });
