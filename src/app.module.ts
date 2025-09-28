@@ -16,6 +16,8 @@ import { MessagesWsModule } from './messages-ws/messages-ws.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
+        ssl:
+          configService.getOrThrow<string>('STAGE') === 'prod' ? true : false,
         type: 'postgres',
         host: configService.get<string>('POSTGRES_HOST'),
         port: configService.get<number>('POSTGRES_PORT'),
